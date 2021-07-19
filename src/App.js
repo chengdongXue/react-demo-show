@@ -51,7 +51,7 @@ class App extends Component {
     this.setState(function(state) {
       console.log(state.salary);
       return{
-        salary: state.salary + 300
+        salary: state.salary + 400
       }
     });
   }
