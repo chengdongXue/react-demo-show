@@ -6,11 +6,13 @@ class MutableForm extends Component {
         super(props);
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            fruit: 'mango',
         };
         this.changeUserName = this.changeUserName.bind(this);
         this.changePassword = this.changePassword.bind(this);
         this.submitMutableForm = this.submitMutableForm.bind(this);
+        this.selectFruit = this.selectFruit.bind(this);
     }
 
     changeUserName(event) {
@@ -22,7 +24,12 @@ class MutableForm extends Component {
     }
 
     submitMutableForm(event) {
-        console.log(this.state.username.concat(`~~~ consist of ${this.state.password}`));
+        console.log(this.state.username.concat(`~~~ consist of ${this.state.password}`).concat(`!!!!!!!!! ${this.state.fruit}`));
+        event.preventDefault();
+    }
+
+    selectFruit(event) {
+        this.setState({fruit: event.target.value});
         event.preventDefault();
     }
 
@@ -34,6 +41,15 @@ class MutableForm extends Component {
                 </label>
                 <label>Password:
                     <input type="text" id="password" name="password" value={this.state.password} onChange={this.changePassword}></input>
+                </label>
+                <label>
+                    Popular Style
+                    <select value={this.state.fruit} onChange={this.selectFruit}>
+                        <option value="mango">mango</option>
+                        <option value="apple">apple</option>
+                        <option value="lime">lime</option>
+                        <option value="coconut">coconut</option>
+                    </select>
                 </label>
                 <label>
                     <input type="submit" value="Submit"></input>
