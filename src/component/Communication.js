@@ -43,11 +43,11 @@ class Communication extends Component {
                 {
                     this.state.employees.map((item, index) => {
                         return (
-                            <ul key={index} style={{fontSize: 14}}>
-                                <li>{item.name}</li>
-                                <li>{item.jobTitle}</li>
-                                <li>{item.description}</li>
-                            </ul>
+                            <div key={index} style={{fontSize: 14}}>
+                                <span>{item.name}</span>
+                                <span>{item.jobTitle}</span>
+                                <span>{item.description}</span>
+                            </div>
                         )
                     })  
                 }
