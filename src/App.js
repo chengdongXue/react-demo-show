@@ -4,7 +4,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import Communication from "./component/Communication";
 import MutableForm from "./component/MutableForm";
-
+import FancyBorder from './component/ConsistComponent';
 
 class App extends Component {
 
@@ -74,6 +74,7 @@ class App extends Component {
           <button onClick={this.backToContractor} style={{height: 40, width: 120, color: 'red', fontSize: 20}}>Contractor</button>
         </header>
         <MutableForm></MutableForm>
+        <FancyBorder></FancyBorder>
       </div>
     );
   }

@@ -49,7 +49,7 @@ class Communication extends Component {
                                 <span>{item.description}</span>
                             </div>
                         )
-                    })  
+                    })
                 }
                 <h3>Employ State Is <span>{this.props.employState}</span></h3>
                 <h3>Your salary is {this.props.salary} RMB</h3>
