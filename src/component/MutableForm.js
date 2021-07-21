@@ -24,7 +24,7 @@ class MutableForm extends Component {
     }
 
     submitMutableForm(event) {
-        console.log(this.state.username.concat(`~~~ consist of ${this.state.password}`).concat(`!!!!!!!!! ${this.state.fruit}`));
+        console.log(this.state.username.concat(`~~~ consist of with ${this.state.password}`).concat(`!!!!!!!!! ${this.state.fruit}`));
         event.preventDefault();
     }
 
