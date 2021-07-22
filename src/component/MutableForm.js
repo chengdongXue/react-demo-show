@@ -35,7 +35,7 @@ class MutableForm extends Component {
 
     render() {
         return (
-            <form onSubmit={this.submitMutableForm}>
+            <form onSubmit={this.submitMutableForm} style={{marginTop: 20}}>
                 <label>User Name:
                     <input type="text" id="username" name="username" value={this.state.username} onChange={this.changeUserName}></input>
                 </label>
