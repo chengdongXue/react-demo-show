@@ -5,9 +5,10 @@ import "./App.css";
 import Communication from "./component/Communication";
 import MutableForm from "./component/MutableForm";
 import FancyBorder from './component/ConsistComponent';
+import TraditionWaySharePropsVariable from './component/ReactProps';
+import ReactContextWrap from './component/ReactContext';
 
 class App extends Component {
-
   constructor(props) {
     super(props);
     this.backToContractor = this.backToContractor.bind(this);
@@ -75,6 +76,8 @@ class App extends Component {
         </header>
         <MutableForm></MutableForm>
         <FancyBorder></FancyBorder>
+        <TraditionWaySharePropsVariable></TraditionWaySharePropsVariable>
+        <ReactContextWrap></ReactContextWrap>
       </div>
     );
   }
