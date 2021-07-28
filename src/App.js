@@ -7,6 +7,8 @@ import MutableForm from "./component/MutableForm";
 import FancyBorder from './component/ConsistComponent';
 import TraditionWaySharePropsVariable from './component/ReactProps';
 import ReactContextWrap from './component/ReactContext';
+import StateHook from './component/StateHook';
+import EffectReactHook from './component/EffectHook';
 
 class App extends Component {
   constructor(props) {
@@ -78,6 +80,8 @@ class App extends Component {
         <FancyBorder></FancyBorder>
         <TraditionWaySharePropsVariable></TraditionWaySharePropsVariable>
         <ReactContextWrap></ReactContextWrap>
+        <StateHook></StateHook>
+        <EffectReactHook></EffectReactHook>
       </div>
     );
   }
