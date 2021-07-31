@@ -6,9 +6,11 @@ import Communication from "./component/Communication";
 import MutableForm from "./component/MutableForm";
 import FancyBorder from './component/ConsistComponent';
 import TraditionWaySharePropsVariable from './component/ReactProps';
-import ReactContextWrap from './component/ReactContext';
+import ReactContextWrap from './component/ReactContextComponent';
 import StateHook from './component/StateHook';
 import EffectReactHook from './component/EffectHook';
+import ThemeParent from './component/ReactHookContext';
+import BoxMouseMove from './component/CustomHook';
 
 class App extends Component {
   constructor(props) {
@@ -82,6 +84,8 @@ class App extends Component {
         <ReactContextWrap></ReactContextWrap>
         <StateHook></StateHook>
         <EffectReactHook></EffectReactHook>
+        <ThemeParent></ThemeParent>
+        <BoxMouseMove/>
       </div>
     );
   }
