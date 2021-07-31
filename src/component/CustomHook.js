@@ -16,11 +16,12 @@ const BoxOldMouseMove = () => {
     }, []);
     return (
         <div>
-            <h3>使用react的useEffect Hook来做鼠标mousemove事件的注册，return的时候取消注册事件，位置： {state.height}, {state.width}, {state.left}, {state.top}</h3>
+            <h3>使用react useEffect Hook来做鼠标mousemove事件的注册，return的时候取消注册事件，位置： {state.height}, {state.width}, {state.left}, {state.top}</h3>
         </div>
     )
 }
 
+// It is better way for you use useEffect hook.
 const BoxMouseMove = () => {
     const windowPosition = useWindowPosition();
     const windowSize = useWindowSize();
