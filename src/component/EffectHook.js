@@ -12,20 +12,20 @@ class ReactComponentDidMountAndDidUpdate extends Component {
         console.log(this.state.count);
     }
 
-    componentDidUpdate() {
-        this.setState(
-            {
-                count: this.state.count + 1
-            }
-        )
-    }
-
     render() {
         return(
             <div>
                 <h3>{this.state.count}</h3>
                 <button onClick={() => this.setState({count: this.state.count+1})}>React Class Component</button>
             </div>
+        )
+    }
+
+    componentDidUpdate() {
+        this.setState(
+            {
+                count: this.state.count + 1
+            }
         )
     }
 }
