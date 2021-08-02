@@ -11,6 +11,8 @@ import StateHook from './component/StateHook';
 import EffectReactHook from './component/EffectHook';
 import ThemeParent from './component/ReactHookContext';
 import BoxMouseMove from './component/CustomHook';
+import ReactDomRefComponent from './component/ReactRefClassComponentDom';
+import ReactRefFunction from './component/ReactRefFunctionDom';
 
 class App extends Component {
   constructor(props) {
@@ -85,7 +87,9 @@ class App extends Component {
         <StateHook></StateHook>
         <EffectReactHook></EffectReactHook>
         <ThemeParent></ThemeParent>
-        <BoxMouseMove/>
+        <BoxMouseMove />
+        <ReactDomRefComponent />
+        <ReactRefFunction />
       </div>
     );
   }
