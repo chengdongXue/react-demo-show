@@ -1,8 +1,7 @@
 
-import React, { Component } from "react";
+import React, { Component, Suspense } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import Communication from "./component/Communication";
 import MutableForm from "./component/MutableForm";
 import FancyBorder from './component/ConsistComponent';
 import TraditionWaySharePropsVariable from './component/ReactProps';
@@ -13,6 +12,7 @@ import ThemeParent from './component/ReactHookContext';
 import BoxMouseMove from './component/CustomHook';
 import ReactDomRefComponent from './component/ReactRefClassComponentDom';
 import ReactRefFunction from './component/ReactRefFunctionDom';
+const Communication = React.lazy(() => import('./component/Communication'));
 
 class App extends Component {
   constructor(props) {
@@ -26,6 +26,9 @@ class App extends Component {
     }
   }
 
+  componentDidCatch() {
+  }
+
   performingStaff() {
     this.setState({
       employState: "Staff",
@@ -36,6 +39,13 @@ class App extends Component {
   }
 
   backToContractor() {
+    // Dynamic import this file and call pure function inside.
+    // The syntax uses a promise to wait for the Javascript file to be loaded before using the content of the file.
+    // If you use create-react-app, which uses Webpack, you will start by using the dynamic import function. The syntax goes as follow:
+    import('./component/codeSplit/CodeSplitComponent').then(match => {
+      match.codeSplitting('xue','chengdong');
+    });
+
     const contractor_ = {
         employState: 'contractor',
         staffRemind: 'Become staff whether is sure to succeed? ',
@@ -69,28 +79,30 @@ class App extends Component {
   render() {
     // JSX patten codes
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <Communication
-            employState={this.state.employState}
-            staffRemind={this.state.staffRemind}
-            salary={this.state.salary}
-            roleMessage={this.state.roleMessage}
-            performingStaff={this.performingStaff.bind(this)}></Communication>
-          <button onClick={this.backToContractor} style={{height: 40, width: 120, color: 'red', fontSize: 20}}>Contractor</button>
-        </header>
-        <MutableForm></MutableForm>
-        <FancyBorder></FancyBorder>
-        <TraditionWaySharePropsVariable></TraditionWaySharePropsVariable>
-        <ReactContextWrap></ReactContextWrap>
-        <StateHook></StateHook>
-        <EffectReactHook></EffectReactHook>
-        <ThemeParent></ThemeParent>
-        <BoxMouseMove />
-        <ReactDomRefComponent />
-        <ReactRefFunction />
-      </div>
+      <Suspense fallback={<div style={{fontSize: 20, color: 'red'}}>Loading...</div>}>
+        <div className="App">
+          <header className="App-header">
+            <img src={logo} className="App-logo" alt="logo" />
+            <Communication
+              employState={this.state.employState}
+              staffRemind={this.state.staffRemind}
+              salary={this.state.salary}
+              roleMessage={this.state.roleMessage}
+              performingStaff={this.performingStaff.bind(this)}></Communication>
+            <button onClick={this.backToContractor} style={{height: 40, width: 120, color: 'red', fontSize: 20}}>Contractor</button>
+          </header>
+          <MutableForm></MutableForm>
+          <FancyBorder></FancyBorder>
+          <TraditionWaySharePropsVariable></TraditionWaySharePropsVariable>
+          <ReactContextWrap></ReactContextWrap>
+          <StateHook></StateHook>
+          <EffectReactHook></EffectReactHook>
+          <ThemeParent></ThemeParent>
+          <BoxMouseMove />
+          <ReactDomRefComponent />
+          <ReactRefFunction />
+        </div>
+      </Suspense>
     );
   }
 }
