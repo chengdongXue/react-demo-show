@@ -25,12 +25,12 @@ class Communication extends Component {
     }
 
     componentWillReceiveProps() {
-        console.log(`componentWillReceiveProps(): It seem sure to call this function when the state or props has update`);
+        console.log(`componentWillReceiveProps(): It seemed sure to call this function when the state or props has update`);
         // console.log(`componentWillReceiveProps(): It seem sure to call this function when ${this.props.roleMessage}`);
     }
 
     shouldComponentUpdate() {
-        console.log(`shouldComponentUpdate(): To determine whether is needs to render at once when it was received new props and state`);
+        console.log(`shouldComponentUpdate(): To determine whether is needs to render again when it was received value of new props and state`);
         // return false is indicate that it was won't render at once
         // return true is indicate that it seem sure that perform render() function.
         return true;
@@ -66,6 +66,10 @@ class Communication extends Component {
 
     componentDidUpdate() {
         console.log(`componentDidUpdate(): The render() function has been rendered, will to call this function`);
+    }
+
+    componentWillUnmount() {
+        console.log(`componentWillUnmount(): The function will destroy something like dom etc....`);
     }
 }
 
