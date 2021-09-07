@@ -12,6 +12,9 @@ import ThemeParent from './component/ReactHookContext';
 import BoxMouseMove from './component/CustomHook';
 import ReactDomRefComponent from './component/ReactRefClassComponentDom';
 import ReactRefFunction from './component/ReactRefFunctionDom';
+import FileInputComponent from './component/uploadFile/fileInputComponent';
+import WasteRenderComponent from './component/codeSplit/CodeSplitComponent';
+import PureWasteComponent from './component/codeSplit/PureWasteComponent';
 const Communication = React.lazy(() => import('./component/Communication'));
 
 class App extends Component {
@@ -101,6 +104,9 @@ class App extends Component {
           <BoxMouseMove />
           <ReactDomRefComponent />
           <ReactRefFunction />
+          <FileInputComponent />
+          <WasteRenderComponent />
+          <PureWasteComponent />
         </div>
       </Suspense>
     );
