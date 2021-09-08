@@ -2,10 +2,10 @@ import React, { Component, PureComponent } from 'react';
 
 // 使用纯组件
 export default class PureWasteComponent extends PureComponent {
-    // React在v15.5中引入了Pure Components。 这启用了默认的相等性检查（更改检测）
-    // 我们不必将 shouldComponentUpdate 生命周期方法添加到我们的组件以进行更改检测，我们只需要继承 React.PureComponent.
-    // React 将会自己判断是否需要重新渲染.
-    // 继承 React.PureComponent时，不能再重写shouldComponentUpdate，否则会引发警告.
+    // React在v15.5中引入了Pure Components。这启用了默认的相等性检查（更改检测）
+    // 我们不必将 shouldComponentUpdate 生命周期方法添加到我们的组件以进行更改检测，我们只需要继承 React.PureComponent。
+    // React 将会自己判断是否需要重新渲染。
+    // 继承 React.PureComponent时，不能再重写shouldComponentUpdate，否则会引发警告。
     constructor(props) {
         super(props);
         this.state = {
