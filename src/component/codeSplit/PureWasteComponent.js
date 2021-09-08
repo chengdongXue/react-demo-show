@@ -2,10 +2,10 @@ import React, { Component, PureComponent } from 'react';
 
 // 使用纯组件
 export default class PureWasteComponent extends PureComponent {
-    // React在v15.5中引入了Pure Components。 这启用了默认的相等性检查（更改检测）.
+    // React在v15.5中引入了Pure Components。 这启用了默认的相等性检查（更改检测）
     // 我们不必将 shouldComponentUpdate 生命周期方法添加到我们的组件以进行更改检测，我们只需要继承 React.PureComponent.
     // React 将会自己判断是否需要重新渲染.
-    // 继承 React.PureComponent 时，不能再重写 shouldComponentUpdate，否则会引发警告.
+    // 继承 React.PureComponent时，不能再重写shouldComponentUpdate，否则会引发警告.
     constructor(props) {
         super(props);
         this.state = {
@@ -19,9 +19,9 @@ export default class PureWasteComponent extends PureComponent {
         console.log('初始化react生命周期函数中的第一个方法！');
     }
 
-    // 该组件的初始状态为 {count: 0} 。当我们单击 click Me 按钮时，它将 count 状态设置为 1。屏幕的 0 就变成了 1。
+    // 该组件的初始状态为 {count: 0} 。当我们单击 click Me 按钮时，它将 count 状态设置为 1。屏幕的 0 就变成了 1
     // 当我们再次单击该按钮时出现了问题，组件不应该重新呈现，因为状态没有更改。count 的上个值为1，新值也 1，因此不需要更新 DOM
-    // 这表明即使状态相同，我们的组件也在重新呈现，这称为浪费渲染。
+    // 这表明即使状态相同，我们的组件也在重新呈现，这称为浪费渲染
     componentWillUpdate(nextProps, nextState) {
         console.log('当一个组件由于状态变化而确定要更新/重新渲染时，react会调用该方法!');
     }
@@ -51,7 +51,7 @@ export default class PureWasteComponent extends PureComponent {
     }
 
     componentDidMount() {
-        console.log('虚拟dom渲染完成之后执行该生命周期函数，可以在此函数中call后台api，取得数据之后setState()更新dom！');
+        console.log('虚拟dom渲染完成之后执行该生命周期函数，可以在此函数中call后台api，取得数据之后setState() 更新dom！');
     }
 
     componentDidUpdate(nextProps, nextState) {
