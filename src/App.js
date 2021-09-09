@@ -1,8 +1,10 @@
-
-import React, { Component, Suspense } from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import MutableForm from "./component/MutableForm";
+/* eslint-disable react/button-has-type */
+/* eslint-disable react/jsx-no-bind */
+/* eslint-disable react/destructuring-assignment */
+import React, { Component, Suspense } from 'react';
+import logo from './logo.svg';
+import './App.css';
+import MutableForm from './component/MutableForm';
 import FancyBorder from './component/ConsistComponent';
 import TraditionWaySharePropsVariable from './component/ReactProps';
 import ReactContextWrap from './component/ReactContextComponent';
@@ -12,9 +14,11 @@ import ThemeParent from './component/ReactHookContext';
 import BoxMouseMove from './component/CustomHook';
 import ReactDomRefComponent from './component/ReactRefClassComponentDom';
 import ReactRefFunction from './component/ReactRefFunctionDom';
+// eslint-disable-next-line import/no-unresolved
 import FileInputComponent from './component/uploadFile/fileInputComponent';
 import WasteRenderComponent from './component/codeSplit/CodeSplitComponent';
 import PureWasteComponent from './component/codeSplit/PureWasteComponent';
+
 const Communication = React.lazy(() => import('./component/Communication'));
 
 class App extends Component {
@@ -25,8 +29,8 @@ class App extends Component {
       employState: 'contractor',
       staffRemind: 'Become staff whether is sure to succeed? ',
       salary: 5000,
-      roleMessage: 'Initial message for method of react of componentWillReceiveProps()'
-    }
+      roleMessage: 'Initial message for method of react of componentWillReceiveProps()',
+    };
   }
 
   componentDidCatch() {
@@ -34,10 +38,10 @@ class App extends Component {
 
   performingStaff() {
     this.setState({
-      employState: "Staff",
+      employState: 'Staff',
       salary: 10000,
       staffRemind: 'You became a staff in HP',
-      roleMessage: 'component of children try to update component of parent'
+      roleMessage: 'component of children try to update component of parent',
     });
   }
 
@@ -45,44 +49,44 @@ class App extends Component {
     // Dynamic import this file and call pure function inside.
     // The syntax uses a promise to wait for the Javascript file to be loaded before using the content of the file.
     // If you use create-react-app, which uses Webpack, you will start by using the dynamic import function. The syntax goes as follow:
-    import('./component/codeSplit/CodeSplitComponent').then(match => {
-      match.codeSplitting('xue','chengdong');
+    import('./component/codeSplit/CodeSplitComponent').then((match) => {
+      match.codeSplitting('xue', 'victor');
     });
 
-    const contractor_ = {
-        employState: 'contractor',
-        staffRemind: 'Become staff whether is sure to succeed? ',
-        salary: 4000,
-        roleMessage: 'component of parent try to update component of children'
+    const contractor = {
+      employState: 'contractor',
+      staffRemind: 'Become staff whether is sure to succeed? ',
+      salary: 4000,
+      roleMessage: 'component of parent try to update component of children',
     };
-    this.setState(contractor_);
+    this.setState(contractor);
 
-    this.setState(function(state) {
+    this.setState((state) => {
       console.log(state.salary);
-      return{
-        salary: state.salary + 100
-      }
+      return {
+        salary: state.salary + 100,
+      };
     });
 
-    this.setState(function(state) {
+    this.setState((state) => {
       console.log(state.salary);
-      return{
-        salary: state.salary + 200
-      }
+      return {
+        salary: state.salary + 200,
+      };
     });
 
-    this.setState(function(state) {
+    this.setState((state) => {
       console.log(state.salary);
-      return{
-        salary: state.salary + 400
-      }
+      return {
+        salary: state.salary + 400,
+      };
     });
   }
 
   render() {
     // JSX patten codes
     return (
-      <Suspense fallback={<div style={{fontSize: 20, color: 'red'}}>Loading...</div>}>
+      <Suspense fallback={<div style={{ fontSize: 20, color: 'red' }}>Loading...</div>}>
         <div className="App">
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
@@ -91,16 +95,24 @@ class App extends Component {
               staffRemind={this.state.staffRemind}
               salary={this.state.salary}
               roleMessage={this.state.roleMessage}
-              performingStaff={this.performingStaff.bind(this)}></Communication>
-            <button onClick={this.backToContractor} style={{height: 40, width: 120, color: 'red', fontSize: 20}}>Contractor</button>
+              performingStaff={this.performingStaff.bind(this)}
+            />
+            <button
+              onClick={this.backToContractor}
+              style={{
+                height: 40, width: 120, color: 'red', fontSize: 20,
+              }}
+            >
+              Contractor
+            </button>
           </header>
-          <MutableForm></MutableForm>
-          <FancyBorder></FancyBorder>
-          <TraditionWaySharePropsVariable></TraditionWaySharePropsVariable>
-          <ReactContextWrap></ReactContextWrap>
-          <StateHook></StateHook>
-          <EffectReactHook></EffectReactHook>
-          <ThemeParent></ThemeParent>
+          <MutableForm />
+          <FancyBorder />
+          <TraditionWaySharePropsVariable />
+          <ReactContextWrap />
+          <StateHook />
+          <EffectReactHook />
+          <ThemeParent />
           <BoxMouseMove />
           <ReactDomRefComponent />
           <ReactRefFunction />

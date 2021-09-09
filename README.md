@@ -15,3 +15,18 @@ https://dev.to/damcosset/implement-code-splitting-in-react-1c0j
 For React.lazy:
 It could be dynamically import component in react when you improvement your application performance.
 The Suspense can warp a great deal of lazy loading components.
+
+## 3. To integration typescript with react.
+This time, we added and integrated a great number of new feature,such as eslint, typescript etc...
+Integrate ESLint with your React project step by step (javascript)
+https://dev.to/brayanarrieta/integrate-eslint-with-your-react-project-javascript-29p
+ESLint will automatically start detecting errors/warnings in .js and .jsx files. This is very very important reminder.
+To disable the linting of some files/folders you can create a .eslintignore at the root of the project.
+    node_modules
+    build
+    README.md
+You can also add linting to scripts in package.json as a part of your pipeline process
+    "scripts": {
+        "lint": "eslint . --ext js,jsx",
+        "lint:fix": "eslint . --ext js,jsx --fix"
+    }
