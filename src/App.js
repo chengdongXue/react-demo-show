@@ -3,7 +3,7 @@
 /* eslint-disable react/destructuring-assignment */
 import React, { Component, Suspense } from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 import MutableForm from './component/MutableForm';
 import FancyBorder from './component/ConsistComponent';
 import TraditionWaySharePropsVariable from './component/ReactProps';

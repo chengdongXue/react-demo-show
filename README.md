@@ -34,3 +34,6 @@ You can also add linting to scripts in package.json as a part of your pipeline p
         "lint": "eslint . --ext js,jsx",
         "lint:fix": "eslint . --ext js,jsx --fix"
     }
+
+## 4. To add node-sass framework
+We added the node-sass framework into our project, we would never used suffix with css file to write styles of css.
