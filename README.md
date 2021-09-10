@@ -36,4 +36,7 @@ You can also add linting to scripts in package.json as a part of your pipeline p
     }
 
 ## 4. To add node-sass framework
-We added the node-sass framework into our project, we would never used suffix with css file to write styles of css.
+1. We added the node-sass framework into our project, we would never used suffix with css file to write styles of css.
+2. navigation different screes with react router and relearning hooks of react with suffix .ts or tsx file.
+    You can reference this article as below for react router.
+    https://reactrouter.com/web/guides/quick-start/installation
